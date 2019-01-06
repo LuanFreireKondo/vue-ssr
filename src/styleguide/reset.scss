@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+
+  /* no tap color - webkit */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  color: #333;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  line-height: normal;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: #9c27b0;
+  text-decoration: none;
+}
+
+img, iframe {
+  border: 0px;
+  display: block;
+}
+
+input, select, textarea, button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
