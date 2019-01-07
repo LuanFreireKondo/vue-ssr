@@ -1,3 +1,9 @@
 # Vue.js + SSR
 
-Hello! :)
+### Install and run
+
+``` bash
+
+npm start
+
+```
