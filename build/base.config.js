@@ -1,18 +1,12 @@
 const path = require('path')
-const webpack = require('webpack')
-const webpackMerge = require('webpack-merge')
-const vueTemplate = require('vue-template-compiler')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const env = process.env.NODE_ENV
 
-let plugins = []
-
-if (env == 'production') {
-  // for example: minify js with uglifyjs
-}
-
 // configuration
 module.exports = {
+  mode: env === 'production' ? 'production' : 'development',
+
   // Options related to how webpack emits results
   // and webpack starts bundling
   output: {
@@ -25,15 +19,26 @@ module.exports = {
   module: {
 
     // rules for modules (configure loaders, parser options, etc.)
-    rules: [{
+    rules: [
+      {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-          }
-        }
+        loader: 'vue-loader'
       },
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
     ]
   },
 
@@ -45,5 +50,7 @@ module.exports = {
   },
 
   // list of additional plugins
-  plugins: plugins,
+  plugins: [
+    new VueLoaderPlugin()
+  ],
 };

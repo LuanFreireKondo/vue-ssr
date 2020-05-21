@@ -29,7 +29,7 @@ server.get('*', (req, res) => {
          res.status(404).end('Page not found')
        } else {
          console.log(err)
-         res.status(500).end('Internal Server Error')
+         res.status(500).end('Internal Server Error', err)
        }
      } else {
        res.end(html)
