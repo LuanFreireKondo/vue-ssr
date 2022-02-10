@@ -21,7 +21,7 @@
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "sass-loader": "^8.0.2",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.2",
