@@ -2,15 +2,18 @@ const fs  = require('fs')
 const express = require('express')
 const { createBundleRenderer } = require('vue-server-renderer')
 
+const template = fs.readFileSync('./src/template.html', 'utf-8')
+
 const serverBundlePanel = require('./dist/vue-ssr-server-bundle.json')
+const clientManifest = require('./dist/vue-ssr-client-manifest.json')
 
 const rendererPanel = createBundleRenderer(serverBundlePanel, {
-  template: fs.readFileSync('./src/template.html', 'utf-8'),
-  clientManifest: require('./dist/vue-ssr-client-manifest.json'),
-  runInNewContext: false, // recommended
+  template,
+  clientManifest,
+  // runInNewContext: false, // recommended
 })
 
-const port = 8000
+const port = 8010
 const server = express()
 
 server.use('/dist', express.static('./dist'));

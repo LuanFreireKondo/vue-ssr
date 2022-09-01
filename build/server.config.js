@@ -17,7 +17,8 @@ module.exports = merge(baseConfig, {
 
   // This tells the server bundle to use Node-style exports
   output: {
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
+    // library: 'commonjs2',
   },
 
   // https://webpack.js.org/configuration/externals/#function
